@@ -11,8 +11,11 @@ const checkUserInSession = async () => {
         authEl.classList.add('.hidden');
     } else if (data.status === 'ok'){
         linkSignIn.classList.add('hidden');
-
         // console.log('after status', data)
+        const html = `<p>${session.payload.profile.name}</p>`
+        linkSignIn.innerHTML = html;
+              
+        
     }
 }
 checkUserInSession();
